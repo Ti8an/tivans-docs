@@ -1,144 +1,316 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mindeck — Privacy Policy</title>
-<meta name="description" content="Политика конфиденциальности приложения Mindeck / Mindeck privacy policy">
-<style>
-  :root {
-    --bg: #F4F1EA;
-    --surface: #FFFFFF;
-    --border: #E2DCCF;
-    --text: #1E1B3A;
-    --text-secondary: #5E5A78;
-    --primary: #5B45D6;
-    --chip: #ECE6FA;
-  }
-  @media (prefers-color-scheme: dark) {
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MINDECK — Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #17152B;
-      --surface: #211E3A;
-      --border: #34305A;
-      --text: #F4F1EA;
-      --text-secondary: #B4AFD0;
-      --primary: #B3A2FF;
-      --chip: #2C2850;
+      --bg: #080a10; --card: #0f1219; --border: #1c2133;
+      --accent: #4f6ef7; --accent2: #7fdfb8;
+      --text: #eef0f6; --muted: #4a5068; --muted2: #8892aa;
     }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-  header { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 24px; }
-  .brand { font-size: 28px; font-weight: 800; letter-spacing: -0.01em; }
-  nav a {
-    display: inline-block; padding: 6px 14px; border-radius: 999px;
-    background: var(--chip); color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px;
-  }
-  section {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-    padding: 24px; margin-bottom: 24px;
-  }
-  h1 { font-size: 26px; line-height: 1.25; margin: 0 0 4px; }
-  h2 { font-size: 18px; margin: 28px 0 8px; }
-  .meta { color: var(--text-secondary); font-size: 14px; margin: 0 0 16px; }
-  p, li { margin: 0 0 10px; }
-  ul { padding-left: 22px; margin: 0 0 10px; }
-  a { color: var(--primary); }
-  .summary { background: var(--chip); border-radius: 14px; padding: 14px 16px; margin: 16px 0; }
-</style>
+    body { background: var(--bg); color: var(--text); font-family: 'DM Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace; min-height: 100vh; }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(79,110,247,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(79,110,247,0.04) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none; z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    /* BACK */
+    .back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--muted2); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
+    .back:hover { color: var(--accent); }
+
+    /* HEADER */
+    .app-header { margin-bottom: 2.5rem; animation: fadeUp 0.6s ease forwards; }
+    .app-label { font-size: 0.68rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.8rem; }
+    .app-header h1 { font-family: 'Syne', system-ui, sans-serif; font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; letter-spacing: -0.02em; }
+    .app-header h1 span { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .meta { margin-top: 0.8rem; font-size: 0.75rem; color: var(--muted2); display: flex; flex-wrap: wrap; gap: 1rem; }
+    .meta-item { display: flex; align-items: center; gap: 0.4rem; }
+    .meta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
+
+    /* LANGUAGE SWITCH */
+    .lang { display: flex; gap: 0.5rem; margin-top: 1.4rem; }
+    .lang a {
+      font-size: 0.7rem; padding: 0.3rem 0.8rem; border-radius: 999px; text-decoration: none;
+      background: rgba(79,110,247,0.12); color: var(--accent); border: 1px solid rgba(79,110,247,0.25);
+      transition: background 0.2s;
+    }
+    .lang a:hover { background: rgba(79,110,247,0.22); }
+
+    .divider { height: 1px; background: var(--border); margin: 2rem 0; }
+
+    /* SECTIONS */
+    .section { margin-bottom: 2rem; animation: fadeUp 0.5s ease forwards; opacity: 0; }
+    .section:nth-of-type(1) { animation-delay: 0.05s; }
+    .section:nth-of-type(2) { animation-delay: 0.10s; }
+    .section:nth-of-type(3) { animation-delay: 0.15s; }
+    .section:nth-of-type(4) { animation-delay: 0.20s; }
+    .section:nth-of-type(5) { animation-delay: 0.25s; }
+    .section:nth-of-type(6) { animation-delay: 0.30s; }
+    .section:nth-of-type(7) { animation-delay: 0.35s; }
+    .section:nth-of-type(8) { animation-delay: 0.40s; }
+    .section:nth-of-type(9) { animation-delay: 0.45s; }
+
+    .section-title {
+      font-family: 'Syne', system-ui, sans-serif; font-size: 0.95rem; font-weight: 700;
+      margin-bottom: 0.9rem; color: var(--text);
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .section-num {
+      font-size: 0.65rem; padding: 0.2rem 0.55rem; border-radius: 999px;
+      background: rgba(79,110,247,0.12); color: var(--accent);
+      border: 1px solid rgba(79,110,247,0.25); font-family: 'DM Mono', ui-monospace, monospace;
+    }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem 1.5rem; font-size: 0.78rem; color: var(--muted2); line-height: 1.8; }
+    .card p { margin-bottom: 0.7rem; }
+    .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--text); font-weight: 600; }
+    .card a { color: var(--accent); text-decoration: none; }
+    .card a:hover { text-decoration: underline; }
+
+    .card ul { margin: 0.5rem 0 0.7rem 1.2rem; }
+    .card ul li { margin-bottom: 0.4rem; }
+    .card ul li::marker { color: var(--accent2); }
+
+    .intro { margin-bottom: 2rem; animation: fadeUp 0.5s ease forwards; opacity: 0; }
+
+    /* highlight note */
+    .note {
+      background: rgba(127,223,184,0.07); border: 1px solid rgba(127,223,184,0.2);
+      border-radius: 10px; padding: 0.8rem 1.1rem;
+      font-size: 0.75rem; color: var(--accent2); margin-top: 0.8rem; line-height: 1.6;
+    }
+
+    /* contact card */
+    .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.3rem 1.5rem; font-size: 0.8rem; color: var(--muted2); line-height: 2; }
+    .contact-card strong { color: var(--text); }
+    .contact-card a { color: var(--accent); text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    .lang-block { scroll-margin-top: 1.5rem; }
+
+    footer { margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem; font-size: 0.7rem; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { .app-header, .intro, .section { animation: none; opacity: 1; } }
+    @media (max-width: 500px) { .meta { flex-direction: column; gap: 0.4rem; } }
+  </style>
 </head>
 <body>
-<main>
-  <header>
-    <div class="brand">Mindeck</div>
-    <nav><a href="#ru">Русский</a> <a href="#en">English</a></nav>
-  </header>
+<div class="wrap">
 
-  <section id="ru" lang="ru">
-    <h1>Политика конфиденциальности</h1>
-    <p class="meta">Приложение «Mindeck» (Android) · Tivan Studio · действует с 22 октября 2026 г.</p>
+  <a class="back" href="../../">← Back to portfolio</a>
 
-    <div class="summary"><strong>Коротко:</strong> Mindeck не собирает, не передаёт и не продаёт ваши данные. Приложение работает без интернета, в нём нет рекламы, аналитики и учётных записей.</div>
+  <div class="app-header">
+    <p class="app-label">// Privacy Policy</p>
+    <h1><span>MINDECK</span></h1>
+    <div class="meta">
+      <span class="meta-item"><span class="meta-dot"></span> App: Mindeck</span>
+      <span class="meta-item"><span class="meta-dot"></span> Last updated: October 23, 2026</span>
+      <span class="meta-item"><span class="meta-dot"></span> Effective: October 23, 2026</span>
+    </div>
+    <nav class="lang"><a href="#en">English</a><a href="#ru">Русский</a></nav>
+  </div>
 
-    <h2>1. Какие данные мы собираем</h2>
-    <p>Никаких. Приложение не запрашивает доступ к интернету и не может отправлять данные куда-либо. Мы не собираем имя, адрес электронной почты, номер телефона, местоположение, идентификаторы устройства, контакты, фотографии или другую личную информацию.</p>
+  <div class="divider"></div>
 
-    <h2>2. Что хранится на вашем устройстве</h2>
-    <p>Чтобы игра работала, приложение сохраняет в своём внутреннем хранилище на устройстве:</p>
-    <ul>
-      <li>результаты партий: игра, сложность, очки, звёзды, время — для экранов «Прогресс» и «Рейтинг» и рекордов;</li>
-      <li>одну незавершённую партию, чтобы её можно было продолжить;</li>
-      <li>настройки: звук, музыка, вибрация, язык, тема оформления и отметки о просмотренном обучении.</li>
-    </ul>
-    <p>Эти данные не покидают устройство и недоступны нам или третьим лицам.</p>
+  <!-- ENGLISH -->
+  <div id="en" class="lang-block" lang="en">
 
-    <h2>3. Разрешения</h2>
-    <p>Приложение использует только разрешение <strong>«Вибрация»</strong> — для лёгкого отклика во время игры. Его можно отключить в настройках приложения.</p>
+    <div class="card intro">
+      This Privacy Policy describes how the Mindeck application ("we", "our", or "the app") handles information when you use it. Mindeck is a collection of offline brain-training games. We are committed to protecting your privacy. This document explains what data the app accesses, how it is used, and your rights.
+    </div>
 
-    <h2>4. Резервное копирование Android</h2>
-    <p>Если на вашем устройстве включено резервное копирование Android, система может сохранить данные приложения (результаты и настройки) в резервную копию вашего аккаунта Google. Это делает операционная система по правилам Google, а не мы; управлять этим можно в настройках устройства.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">01</span> Information We Do Not Collect</h2>
+      <div class="card">
+        <p>Mindeck does <strong>not</strong> collect, store on our side, or transmit any personally identifiable information. Specifically:</p>
+        <ul>
+          <li>No name, email address, or account credentials — the app has no accounts</li>
+          <li>No device identifiers (IMEI, advertising ID, etc.)</li>
+          <li>No location data</li>
+          <li>No camera or microphone access</li>
+          <li>No contacts, photos, or calendar data</li>
+          <li>No usage analytics or crash reporting sent to us</li>
+        </ul>
+      </div>
+    </div>
 
-    <h2>5. Третьи стороны</h2>
-    <p>В приложении нет сторонних SDK для рекламы, аналитики, отчётов о сбоях или входа через соцсети. Мы не передаём данные третьим лицам.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">02</span> Data Stored Locally on Your Device</h2>
+      <div class="card">
+        <p>The app stores the following data exclusively on your device, in a local Room database:</p>
+        <ul>
+          <li><strong>Game results</strong> — game, difficulty, score, stars, and time. Used for the Progress and Ranking screens and your best scores.</li>
+          <li><strong>One unfinished game</strong> — so you can continue it later.</li>
+          <li><strong>Settings</strong> — sound, music, vibration, language, theme, and which tutorials you have already seen.</li>
+        </ul>
+        <p>This data contains no personal information and never leaves the device.</p>
+        <div class="note">
+          You can clear this data at any time through your device's app settings:<br>
+          Settings → Apps → Mindeck → Storage → Clear Data
+        </div>
+      </div>
+    </div>
 
-    <h2>6. Дети</h2>
-    <p>Mindeck подходит для любого возраста. Поскольку приложение не собирает никаких данных, оно не собирает и данные детей.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">03</span> No Network Access</h2>
+      <div class="card">
+        Mindeck works fully offline. The app does not request the Internet permission and makes no network requests, so it cannot send any data from your device.
+      </div>
+    </div>
 
-    <h2>7. Как удалить данные</h2>
-    <p>Все данные можно удалить, очистив данные приложения в настройках Android («Приложения → Mindeck → Хранилище → Очистить данные») или удалив приложение.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">04</span> No Third-Party Advertising or Analytics</h2>
+      <div class="card">
+        Mindeck does not integrate any advertising networks, analytics SDKs (e.g., Firebase, Google Analytics, Crashlytics), or social media trackers. No data is shared with any third party.
+      </div>
+    </div>
 
-    <h2>8. Изменения политики</h2>
-    <p>Если политика изменится, новая версия будет опубликована на этой странице с новой датой вступления в силу.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">05</span> Android Permissions</h2>
+      <div class="card">
+        The app uses only the <strong>Vibrate</strong> permission, for light haptic feedback during play. Vibration can be turned off in the app settings.
+      </div>
+    </div>
 
-    <h2>9. Контакты</h2>
-    <p>Вопросы о конфиденциальности: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></p>
-  </section>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">06</span> Android Backup</h2>
+      <div class="card">
+        If Android backup is enabled on your device, the operating system may include the app's local data (results and settings) in your Google account backup. This is handled by Android under Google's terms, not by us, and can be managed in your device settings.
+      </div>
+    </div>
 
-  <section id="en" lang="en">
-    <h1>Privacy Policy</h1>
-    <p class="meta">Mindeck app (Android) · Tivan Studio · effective October 22, 2026</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">07</span> Children's Privacy</h2>
+      <div class="card">
+        Mindeck does not collect personal data from any user, including children under the age of 13.
+      </div>
+    </div>
 
-    <div class="summary"><strong>In short:</strong> Mindeck does not collect, share or sell your data. The app works offline and has no ads, analytics or accounts.</div>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">08</span> Changes to This Policy</h2>
+      <div class="card">
+        We may update this Privacy Policy from time to time. Any changes will be reflected by an updated "Last updated" date at the top of this page. Continued use of the app after changes are posted constitutes acceptance of those changes.
+      </div>
+    </div>
 
-    <h2>1. Data we collect</h2>
-    <p>None. The app does not request internet access and cannot send data anywhere. We do not collect your name, email address, phone number, location, device identifiers, contacts, photos or any other personal information.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">09</span> Contact</h2>
+      <div class="contact-card">
+        If you have any questions or concerns about this Privacy Policy, please contact us:<br><br>
+        <strong>Timur Ivanov · Tivan Game Studio</strong><br>
+        <a href="mailto:review4coolgames@gmail.com">review4coolgames@gmail.com</a>
+      </div>
+    </div>
+  </div>
 
-    <h2>2. Data stored on your device</h2>
-    <p>To work, the app keeps the following in its private storage on your device:</p>
-    <ul>
-      <li>game results: game, difficulty, score, stars and time — for the Progress and Ranking screens and best scores;</li>
-      <li>one unfinished game, so you can resume it;</li>
-      <li>settings: sound, music, vibration, language, theme and which tutorials you have seen.</li>
-    </ul>
-    <p>This data never leaves your device and is not available to us or to any third party.</p>
+  <div class="divider"></div>
 
-    <h2>3. Permissions</h2>
-    <p>The app only uses the <strong>Vibrate</strong> permission, for light haptic feedback during play. You can turn it off in the app settings.</p>
+  <!-- RUSSIAN -->
+  <div id="ru" class="lang-block" lang="ru">
 
-    <h2>4. Android backup</h2>
-    <p>If Android backup is enabled on your device, the system may include the app's data (results and settings) in your Google account backup. This is done by the operating system under Google's terms, not by us, and can be managed in your device settings.</p>
+    <div class="card intro">
+      Эта политика конфиденциальности описывает, как приложение Mindeck («мы», «приложение») обращается с информацией при его использовании. Mindeck — сборник офлайн-игр для тренировки мозга. Мы бережём вашу конфиденциальность. Ниже описано, к каким данным приложение обращается, как они используются и какие у вас есть права.
+    </div>
 
-    <h2>5. Third parties</h2>
-    <p>The app contains no third-party SDKs for advertising, analytics, crash reporting or social login. We do not share data with third parties.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">01</span> Какие данные мы не собираем</h2>
+      <div class="card">
+        <p>Mindeck <strong>не</strong> собирает, не хранит у себя и не передаёт никакие персональные данные. В частности:</p>
+        <ul>
+          <li>Нет имени, адреса почты и учётных данных — в приложении нет аккаунтов</li>
+          <li>Нет идентификаторов устройства (IMEI, рекламный ID и т. п.)</li>
+          <li>Нет данных о местоположении</li>
+          <li>Нет доступа к камере и микрофону</li>
+          <li>Нет доступа к контактам, фото и календарю</li>
+          <li>Не отправляются аналитика использования и отчёты о сбоях</li>
+        </ul>
+      </div>
+    </div>
 
-    <h2>6. Children</h2>
-    <p>Mindeck is suitable for all ages. Since the app collects no data, it collects no data from children.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">02</span> Данные, которые хранятся на устройстве</h2>
+      <div class="card">
+        <p>Приложение хранит только на вашем устройстве, в локальной базе данных Room:</p>
+        <ul>
+          <li><strong>Результаты партий</strong> — игра, сложность, очки, звёзды и время. Нужны для экранов «Прогресс» и «Рейтинг» и рекордов.</li>
+          <li><strong>Одну незавершённую партию</strong> — чтобы её можно было продолжить.</li>
+          <li><strong>Настройки</strong> — звук, музыка, вибрация, язык, тема оформления и отметки о просмотренном обучении.</li>
+        </ul>
+        <p>Эти данные не содержат личной информации и не покидают устройство.</p>
+        <div class="note">
+          Удалить данные можно в любой момент в настройках устройства:<br>
+          Настройки → Приложения → Mindeck → Хранилище → Очистить данные
+        </div>
+      </div>
+    </div>
 
-    <h2>7. Deleting your data</h2>
-    <p>You can delete all data by clearing the app's data in Android settings (Apps → Mindeck → Storage → Clear data) or by uninstalling the app.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">03</span> Без доступа к сети</h2>
+      <div class="card">
+        Mindeck полностью работает без интернета. Приложение не запрашивает разрешение на доступ к интернету и не выполняет сетевых запросов, поэтому не может передать данные с вашего устройства.
+      </div>
+    </div>
 
-    <h2>8. Changes to this policy</h2>
-    <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">04</span> Без рекламы и аналитики третьих сторон</h2>
+      <div class="card">
+        В Mindeck нет рекламных сетей, SDK аналитики (например, Firebase, Google Analytics, Crashlytics) и трекеров социальных сетей. Данные не передаются третьим лицам.
+      </div>
+    </div>
 
-    <h2>9. Contact</h2>
-    <p>Privacy questions: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></p>
-  </section>
-</main>
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">05</span> Разрешения Android</h2>
+      <div class="card">
+        Приложение использует только разрешение <strong>«Вибрация»</strong> — для лёгкого отклика во время игры. Вибрацию можно отключить в настройках приложения.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">06</span> Резервное копирование Android</h2>
+      <div class="card">
+        Если на устройстве включено резервное копирование Android, система может сохранить локальные данные приложения (результаты и настройки) в резервную копию вашего аккаунта Google. Это делает Android по правилам Google, а не мы; управлять этим можно в настройках устройства.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">07</span> Конфиденциальность детей</h2>
+      <div class="card">
+        Mindeck не собирает персональные данные ни у кого из пользователей, в том числе у детей младше 13 лет.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">08</span> Изменения политики</h2>
+      <div class="card">
+        Мы можем время от времени обновлять эту политику. Об изменениях будет говорить новая дата «Last updated» вверху страницы. Продолжая пользоваться приложением после публикации изменений, вы принимаете обновлённую политику.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title"><span class="section-num">09</span> Контакты</h2>
+      <div class="contact-card">
+        Если у вас есть вопросы об этой политике конфиденциальности, напишите нам:<br><br>
+        <strong>Тимур Иванов · Tivan Game Studio</strong><br>
+        <a href="mailto:review4coolgames@gmail.com">review4coolgames@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Tivan Game Studio · Mindeck</span>
+    <a href="../../">← Portfolio</a>
+  </footer>
+
+</div>
 </body>
 </html>
