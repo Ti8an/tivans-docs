@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Пепел — политика конфиденциальности</title>
+<title>Ash Privacy Policy</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Fira+Sans:wght@400;500;600&family=Fira+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
@@ -84,7 +84,8 @@ p strong, li strong { color: var(--text); font-weight: 600; }
 .sheet-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 14px; background: linear-gradient(var(--plate-l), var(--plate)); font-weight: 700; letter-spacing: 0.1em; font-size: 12px; color: var(--cream); }
 .sheet-bar span { color: var(--orange-l); }
 .sheet-body { overflow-x: auto; }
-.sheet table { border-collapse: collapse; width: 100%; min-width: 440px; }
+.sheet { min-width: 0; max-width: 100%; } section, .lang-body { min-width: 0; }
+.sheet table { border-collapse: collapse; width: 100%; min-width: 340px; }
 .sheet td { padding: 8px 14px; border-top: 1px solid #1E262C; color: var(--text2); }
 .sheet td:last-child { color: var(--text); font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
 .yes { color: var(--orange-l) !important; } .no { color: var(--green) !important; }
@@ -102,6 +103,16 @@ ul.plain { margin: 0; padding-left: 20px; color: var(--text2); display: flex; fl
 
 footer { border-top: 2px solid var(--plate); padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--text3); }
 footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em; color: var(--cream); }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.lang { display: inline-flex; padding: 4px; gap: 4px; background: var(--edge); border: 2px solid var(--plate-l); border-radius: 12px; box-shadow: 0 3px 0 rgba(0,0,0,0.4); }
+.lang button { appearance: none; border: 0; cursor: pointer; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: 0.06em; color: var(--text2); background: transparent; padding: 6px 14px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; }
+.lang button[aria-pressed="true"] { color: #fff; background: linear-gradient(var(--orange-l), var(--orange) 55%, var(--orange-d)); box-shadow: inset 0 -2px 0 #5A2400; }
+.lang button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.flag { width: 20px; height: 14px; border-radius: 2px; overflow: hidden; display: inline-block; box-shadow: 0 0 0 1px rgba(0,0,0,0.5); }
+[hidden] { display: none !important; }
+h1 { overflow-wrap: anywhere; hyphens: manual; }
+:lang(ru) h1 { font-size: clamp(28px, 5.4vw, 46px); }
+.lang-body { display: flex; flex-direction: column; gap: 28px; }
 </style>
 
 </head>
@@ -109,6 +120,7 @@ footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em
 <div class="sky" aria-hidden="true"></div>
 <div class="wrap">
 
+  <div class="top">
   <header class="brand">
     <svg class="badge" viewBox="0 0 104 120" aria-hidden="true">
       <path d="M52 4l44 16v34c0 30-19 52-44 62C27 106 8 84 8 54V20z" fill="#1E2428" stroke="#F56A03" stroke-width="6"/>
@@ -118,11 +130,156 @@ footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em
       <circle cx="52" cy="56" r="10" fill="#F56A03" stroke="#5A2400" stroke-width="3"/>
     </svg>
     <div>
-      <div class="brand-name sh">ПЕПЕЛ</div>
-      <div class="brand-sub">НАЦИИ ПРОТИВ ОРДЫ</div>
+      <div class="brand-name sh"><span data-l="en">ASH</span><span data-l="ru" hidden>ПЕПЕЛ</span></div>
+      <div class="brand-sub"><span data-l="en">NATIONS VS. THE HORDE</span><span data-l="ru" hidden>НАЦИИ ПРОТИВ ОРДЫ</span></div>
     </div>
   </header>
+  <div class="lang" role="group" aria-label="Language / Язык">
+    <button type="button" id="btn-en" data-set="en" aria-pressed="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#1F3F8F"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>EN</button>
+    <button type="button" id="btn-ru" data-set="ru" aria-pressed="false"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect y="0.667" width="3" height="0.667" fill="#1F4FA8"/><rect y="1.333" width="3" height="0.667" fill="#D52B1E"/></svg>RU</button>
+  </div>
+  </div>
 
+  <div class="lang-body" data-l="en" lang="en">
+  <div class="plate title-plate">
+    <div class="tag">LEGAL INFORMATION</div>
+    <h1 class="sh">Privacy <em>Policy</em></h1>
+    <p class="lead">Ash: Nations vs. the Horde is a mobile strategy game for Android by Tivan's Game Studio. This page explains what data the game stores, why it needs it, who it is shared with and how to delete it.</p>
+    <div class="meta">
+      <span class="chip">Effective <b>December 1, 2026</b></span>
+      <span class="chip">Last updated <b>November 5, 2026</b></span>
+      <span class="chip">Age rating <b>12+</b></span>
+    </div>
+  </div>
+
+  <nav class="plate toc" aria-label="Contents">
+    <div class="toc-h">CONTENTS</div>
+    <ol>
+      <li><a href="#en-s1">Information we collect</a></li>
+      <li><a href="#en-s2">How we use it</a></li>
+      <li><a href="#en-s3">In-game purchases</a></li>
+      <li><a href="#en-s4">Storage and security</a></li>
+      <li><a href="#en-s5">Third-party services</a></li>
+      <li><a href="#en-s6">Your rights</a></li>
+      <li><a href="#en-s7">Children</a></li>
+      <li><a href="#en-s8">Changes to this policy</a></li>
+      <li><a href="#en-s9">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <section id="en-s1">
+    <div class="sec-head"><div class="num">1</div><h2 class="sh">Information we collect</h2></div>
+    <div class="callout">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11V5z"/></svg>
+      <p><strong>We never ask for your name, phone number, address or card details.</strong> A game profile is all you need to play. Below is the full list of what the game stores.</p>
+    </div>
+    <div class="rows">
+      <div class="row"><div class="row-k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" fill="currentColor"/></svg>Game profile</div><div class="row-v">The nickname you chose, internal player ID, hero avatar, level and trophies.</div></div>
+      <div class="row"><div class="row-k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8l3.1 6.4 7 .9-5.1 4.9 1.3 7-6.3-3.4-6.3 3.4 1.3-7L1.9 9.1l7-.9z" fill="currentColor"/></svg>Progress</div><div class="row-v">Completed stages and stars, unlocked heroes and nations, crystals, gold, card deck, sound and graphics settings.</div></div>
+      <div class="row"><div class="row-k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2" fill="currentColor"/><rect x="3" y="9" width="18" height="3" fill="#1A2126"/></svg>Purchases</div><div class="row-v">Google Play order number, item and date. Card details stay with Google; we never see them.</div></div>
+      <div class="row"><div class="row-k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2" fill="currentColor"/><rect x="9" y="18" width="6" height="1.6" rx="0.8" fill="#1A2126"/></svg>Device</div><div class="row-v">Phone model, Android and game version, language. Used to fix bugs on specific devices.</div></div>
+      <div class="row"><div class="row-k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20h4V10H2zM9 20h4V4H9zM16 20h4v-7h-4z" fill="currentColor"/></svg>Battle statistics</div><div class="row-v">Battle length, chosen nation, result, and the stage where players leave the campaign. Anonymous, used for balance.</div></div>
+      <div class="row"><div class="row-k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H8l-4 4z" fill="currentColor"/></svg>Chat</div><div class="row-v">Alliance and co-op chat messages are kept for 30 days so that reports can be reviewed.</div></div>
+    </div>
+    <p>We do <strong>not</strong> collect precise location, contacts, photos, files or microphone audio. The game does not request these permissions.</p>
+  </section>
+
+  <section id="en-s2">
+    <div class="sec-head"><div class="num">2</div><h2 class="sh">How we use it</h2></div>
+    <div class="rows">
+      <div class="row"><div class="row-k">Saving</div><div class="row-v">So your progress is not lost when you change phones or reinstall the game.</div></div>
+      <div class="row"><div class="row-k">Online battles</div><div class="row-v">Matching opponents and allies by army strength, ratings and leaderboards.</div></div>
+      <div class="row"><div class="row-k">Purchases</div><div class="row-v">Delivering crystals and bundles you bought, and restoring them if a purchase did not arrive.</div></div>
+      <div class="row"><div class="row-k">Fixing bugs</div><div class="row-v">Crash reports help us find and fix the error on your device.</div></div>
+      <div class="row"><div class="row-k">Fair play</div><div class="row-v">Detecting cheats, modified clients and boosting; moderating chat.</div></div>
+    </div>
+    <p>We do not sell player data and do not build advertising profiles from it.</p>
+  </section>
+
+  <section id="en-s3">
+    <div class="sec-head"><div class="num">3</div><h2 class="sh">In-game purchases</h2></div>
+    <p>The game is free to play. The shop sells crystals, chests, hero bundles and premium upgrades. Payment goes through <strong>Google Play</strong>: Google processes your card and payment details under its own policy. We only receive confirmation that the purchase was paid.</p>
+    <p>Refunds are handled through Google Play. If a paid item did not appear in the game, contact us with the order number.</p>
+  </section>
+
+  <section id="en-s4">
+    <div class="sec-head"><div class="num">4</div><h2 class="sh">Storage and security</h2></div>
+    <div class="cards">
+      <div class="plate card"><div class="card-t">Encrypted in transit</div><div class="card-d">The game talks to the server over HTTPS / TLS only.</div></div>
+      <div class="plate card"><div class="card-t">Minimal data</div><div class="card-d">We store only what is listed in section 1.</div></div>
+      <div class="plate card"><div class="card-t">Role-based access</div><div class="card-d">Only developers who need player data for their work can see it.</div></div>
+      <div class="plate card"><div class="card-t">Retention</div><div class="card-d">A profile is kept while active and deleted after 24 months without a login.</div></div>
+    </div>
+    <div class="sheet" role="region" aria-label="Summary: what is shared and where">
+      <div class="sheet-bar">SUMMARY · <span>WHAT IS SHARED AND WHERE</span></div>
+      <div class="sheet-body">
+        <table>
+          <tr><td>Progress and profile</td><td>game server · <span class="todo">region</span></td></tr>
+          <tr><td>Payment and card details</td><td class="no">stay with Google Play</td></tr>
+          <tr><td>Crash reports</td><td>Firebase Crashlytics</td></tr>
+          <tr><td>Selling data</td><td class="no">never</td></tr>
+          <tr><td>Advertising</td><td class="yes">player's choice — see section 5</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="en-s5">
+    <div class="sec-head"><div class="num">5</div><h2 class="sh">Third-party services</h2></div>
+    <p>The game uses services from other companies. Each of them has its own privacy policy:</p>
+    <div class="rows">
+      <div class="row"><div class="row-k">Google Play Billing</div><div class="row-v">Payment for purchases. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--orange-l)">Google Privacy Policy</a></div></div>
+      <div class="row"><div class="row-k">Google Play Games</div><div class="row-v">Sign-in and cloud saves, if you linked your account.</div></div>
+      <div class="row"><div class="row-k">Firebase Crashlytics</div><div class="row-v">Crash reports: device model, game version, where the error happened.</div></div>
+      <div class="row"><div class="row-k">Rewarded ads</div><div class="row-v">A video for a bonus plays only when you tap the button yourself. Network: <span class="todo">network name</span>. You can reset your advertising ID in Android settings.</div></div>
+    </div>
+  </section>
+
+  <section id="en-s6">
+    <div class="sec-head"><div class="num">6</div><h2 class="sh">Your rights</h2></div>
+    <p>You can find out what data we hold about you, correct it or delete it at any time.</p>
+    <div class="rows">
+      <div class="row"><div class="row-k">Delete account</div><div class="row-v">In the game: Settings → Account → Delete profile. Your profile and progress are deleted within 30 days.</div></div>
+      <div class="row"><div class="row-k">Request a copy</div><div class="row-v">Contact us with the player ID from settings. We will send an export within 30 days.</div></div>
+      <div class="row"><div class="row-k">Opt out of ads</div><div class="row-v">Don't tap the "reward" buttons, or turn off ad personalization in Android settings.</div></div>
+      <div class="row"><div class="row-k">Uninstall</div><div class="row-v">Removes data from your phone. Server data is deleted only through the request above.</div></div>
+    </div>
+  </section>
+
+  <section id="en-s7">
+    <div class="sec-head"><div class="num">7</div><h2 class="sh">Children</h2></div>
+    <p>The game is intended for players aged 12 and over and is not directed at children under 13. We do not knowingly collect children's data. If you are a parent and believe your child has given us data, contact us and we will delete it.</p>
+  </section>
+
+  <section id="en-s8">
+    <div class="sec-head"><div class="num">8</div><h2 class="sh">Changes to this policy</h2></div>
+    <p>If this policy changes, the new version will appear on this page with a new update date. We will also announce important changes in the game. Continuing to play after a change means you accept the new version.</p>
+  </section>
+
+  <section id="en-s9">
+    <div class="sec-head"><div class="num">9</div><h2 class="sh">Contact us</h2></div>
+    <p>Questions about your data, deletion requests and complaints:</p>
+    <div class="plate contact">
+      <div class="contact-l">
+        <div class="k">DEVELOPER</div>
+        <div class="v">Tivan's Game Studio</div>
+        <div class="k" style="margin-top:8px">SUPPORT EMAIL</div>
+        <div class="v"><span class="todo">support@your-domain</span></div>
+      </div>
+      <a class="btn" href="https://github.com/Ti8an" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H8l-4 4z" fill="currentColor"/></svg>Contact us
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div><b>ASH</b> · Nations vs. the Horde</div>
+    <div>© 2026 Tivan's Game Studio. All rights reserved.</div>
+  </footer>
+
+  </div>
+
+  <div class="lang-body" data-l="ru" lang="ru" hidden>
   <div class="plate title-plate">
     <div class="tag">ПРАВОВАЯ ИНФОРМАЦИЯ</div>
     <h1 class="sh">Политика <em>конфиденциальности</em></h1>
@@ -137,19 +294,19 @@ footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em
   <nav class="plate toc" aria-label="Содержание">
     <div class="toc-h">СОДЕРЖАНИЕ</div>
     <ol>
-      <li><a href="#s1">Какие данные мы собираем</a></li>
-      <li><a href="#s2">Зачем они нужны</a></li>
-      <li><a href="#s3">Покупки в игре</a></li>
-      <li><a href="#s4">Хранение и защита</a></li>
-      <li><a href="#s5">Сторонние сервисы</a></li>
-      <li><a href="#s6">Ваши права</a></li>
-      <li><a href="#s7">Дети</a></li>
-      <li><a href="#s8">Изменения политики</a></li>
-      <li><a href="#s9">Связаться с нами</a></li>
+      <li><a href="#ru-s1">Какие данные мы собираем</a></li>
+      <li><a href="#ru-s2">Зачем они нужны</a></li>
+      <li><a href="#ru-s3">Покупки в игре</a></li>
+      <li><a href="#ru-s4">Хранение и защита</a></li>
+      <li><a href="#ru-s5">Сторонние сервисы</a></li>
+      <li><a href="#ru-s6">Ваши права</a></li>
+      <li><a href="#ru-s7">Дети</a></li>
+      <li><a href="#ru-s8">Изменения политики</a></li>
+      <li><a href="#ru-s9">Связаться с нами</a></li>
     </ol>
   </nav>
 
-  <section id="s1">
+  <section id="ru-s1">
     <div class="sec-head"><div class="num">1</div><h2 class="sh">Какие данные мы собираем</h2></div>
     <div class="callout">
       <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11V5z"/></svg>
@@ -166,7 +323,7 @@ footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em
     <p>Мы <strong>не</strong> собираем точное местоположение, контакты, фото, файлы и микрофон. Игра не запрашивает эти разрешения.</p>
   </section>
 
-  <section id="s2">
+  <section id="ru-s2">
     <div class="sec-head"><div class="num">2</div><h2 class="sh">Зачем они нужны</h2></div>
     <div class="rows">
       <div class="row"><div class="row-k">Сохранение</div><div class="row-v">Чтобы прогресс не потерялся при смене телефона или переустановке.</div></div>
@@ -178,13 +335,13 @@ footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em
     <p>Мы не продаём данные игроков и не строим по ним рекламные профили.</p>
   </section>
 
-  <section id="s3">
+  <section id="ru-s3">
     <div class="sec-head"><div class="num">3</div><h2 class="sh">Покупки в игре</h2></div>
     <p>Игра бесплатная, в магазине можно купить кристаллы, сундуки, наборы героев и премиум-улучшения. Оплата проходит через <strong>Google Play</strong>: карту и платёжные данные обрабатывает Google по своей политике. Нам приходит только подтверждение, что покупка оплачена.</p>
     <p>Возврат денег за покупку оформляется через Google Play. Если оплаченный товар не появился в игре, напишите нам, указав номер заказа.</p>
   </section>
 
-  <section id="s4">
+  <section id="ru-s4">
     <div class="sec-head"><div class="num">4</div><h2 class="sh">Хранение и защита</h2></div>
     <div class="cards">
       <div class="plate card"><div class="card-t">Шифрование в пути</div><div class="card-d">Связь игры с сервером идёт только по HTTPS / TLS.</div></div>
@@ -206,7 +363,7 @@ footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em
     </div>
   </section>
 
-  <section id="s5">
+  <section id="ru-s5">
     <div class="sec-head"><div class="num">5</div><h2 class="sh">Сторонние сервисы</h2></div>
     <p>Для работы игры мы используем сервисы других компаний. У каждого из них своя политика конфиденциальности:</p>
     <div class="rows">
@@ -217,7 +374,7 @@ footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em
     </div>
   </section>
 
-  <section id="s6">
+  <section id="ru-s6">
     <div class="sec-head"><div class="num">6</div><h2 class="sh">Ваши права</h2></div>
     <p>Вы можете в любой момент узнать, какие данные о вас хранятся, исправить их или удалить.</p>
     <div class="rows">
@@ -228,17 +385,17 @@ footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em
     </div>
   </section>
 
-  <section id="s7">
+  <section id="ru-s7">
     <div class="sec-head"><div class="num">7</div><h2 class="sh">Дети</h2></div>
     <p>Игра рассчитана на игроков от 12 лет и не ориентирована на детей младше 13 лет. Мы сознательно не собираем данные детей. Если вы родитель и считаете, что ребёнок передал нам данные, напишите нам, и мы их удалим.</p>
   </section>
 
-  <section id="s8">
+  <section id="ru-s8">
     <div class="sec-head"><div class="num">8</div><h2 class="sh">Изменения политики</h2></div>
     <p>Если политика изменится, новая версия появится на этой странице с новой датой обновления. О важных изменениях мы также предупредим в игре. Продолжая играть после изменений, вы соглашаетесь с новой версией.</p>
   </section>
 
-  <section id="s9">
+  <section id="ru-s9">
     <div class="sec-head"><div class="num">9</div><h2 class="sh">Связаться с нами</h2></div>
     <p>Вопросы о данных, запросы на удаление и жалобы:</p>
     <div class="plate contact">
@@ -258,7 +415,28 @@ footer b { font-family: var(--display); font-weight: 600; letter-spacing: 0.06em
     <div><b>ПЕПЕЛ</b> · Нации против орды</div>
     <div>© 2026 Tivan's Game Studio. Все права защищены.</div>
   </footer>
+  </div>
 </div>
+
+<script>
+(function () {
+  var KEY = 'ash-privacy-lang';
+  function set(l, save) {
+    if (l !== 'ru') l = 'en';
+    document.querySelectorAll('[data-l]').forEach(function (el) { el.hidden = el.getAttribute('data-l') !== l; });
+    document.getElementById('btn-en').setAttribute('aria-pressed', String(l === 'en'));
+    document.getElementById('btn-ru').setAttribute('aria-pressed', String(l === 'ru'));
+    document.documentElement.lang = l;
+    document.title = l === 'ru' ? 'Пепел — политика конфиденциальности' : 'Ash Privacy Policy';
+    if (save) { try { localStorage.setItem(KEY, l); } catch (e) {} }
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { set(b.getAttribute('data-set'), true); }); });
+  var start = 'en';
+  if (/^#ru/.test(location.hash)) start = 'ru';
+  else { try { start = localStorage.getItem(KEY) || 'en'; } catch (e) {} }
+  set(start, false);
+})();
+</script>
 
 </body>
 </html>
