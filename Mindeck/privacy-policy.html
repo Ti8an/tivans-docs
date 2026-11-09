@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MINDECK — Privacy Policy</title>
+  <title>MINDECK — Privacy Policy &amp; Account Deletion</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -98,7 +98,10 @@
     .contact-card a { color: var(--accent); text-decoration: none; }
     .contact-card a:hover { text-decoration: underline; }
 
-    .lang-block { scroll-margin-top: 1.5rem; }
+    .lang-block, .section { scroll-margin-top: 1.5rem; }
+    .section:target .card { border-color: var(--accent); }
+    .section:target { opacity: 1; }
+    .card .note + p { margin-top: 1rem; }
 
     footer { margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem; font-size: 0.7rem; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
     footer a { color: var(--accent); text-decoration: none; }
@@ -115,14 +118,14 @@
   <a class="back" href="../../">← Back to portfolio</a>
 
   <div class="app-header">
-    <p class="app-label">// Privacy Policy</p>
+    <p class="app-label">// Privacy Policy · Account Deletion</p>
     <h1><span>MINDECK</span></h1>
     <div class="meta">
       <span class="meta-item"><span class="meta-dot"></span> App: Mindeck</span>
       <span class="meta-item"><span class="meta-dot"></span> Last updated: November 8, 2026</span>
       <span class="meta-item"><span class="meta-dot"></span> Effective: November 8, 2026</span>
     </div>
-    <nav class="lang"><a href="#en">English</a><a href="#ru">Русский</a></nav>
+    <nav class="lang"><a href="#en">English</a><a href="#ru">Русский</a><a href="#delete-en">Delete account</a><a href="#delete-ru">Удалить аккаунт</a></nav>
   </div>
 
   <div class="divider"></div>
@@ -141,7 +144,7 @@
           <li>No registration: the app does not ask for your name, email or phone number.</li>
           <li>We store only the game data needed for your progress, daily streak, leagues and rankings.</li>
           <li>No advertising, no selling of data.</li>
-          <li>You can request deletion of all your data at any time (see section 11).</li>
+          <li>You can delete your account and all your data at any time — <a href="#delete-en">see section 11</a>.</li>
         </ul>
       </div>
     </div>
@@ -231,10 +234,33 @@
       </div>
     </div>
 
-    <div class="section">
-      <h2 class="section-title"><span class="section-num">11</span> Your Rights and Data Deletion</h2>
+    <div class="section" id="delete-en">
+      <h2 class="section-title"><span class="section-num">11</span> Your Rights and Account Deletion</h2>
       <div class="card">
-        <p>You can change your in-game name in Settings, turn off reminders and sign out of Google Play Games at any time. To delete <strong>all</strong> your profile data, email <a href="mailto:review4coolgames@gmail.com">review4coolgames@gmail.com</a> with your in-game name (shown in Settings). We will delete it within 30 days.</p>
+        <p>You can change your in-game name in Settings, turn off reminders and sign out of Google Play Games at any time. Mindeck by Tivan Game Studio creates your profile automatically, without registration. To delete your account and all associated data, follow the steps below.</p>
+        <p><strong>How to delete your account</strong></p>
+        <ul>
+          <li><strong>Step 1.</strong> Open Mindeck → <strong>Settings</strong> and note your in-game name (for example, "Clever Owl 4821").</li>
+          <li><strong>Step 2.</strong> Send an email to <a href="mailto:review4coolgames@gmail.com?subject=Mindeck%20account%20deletion">review4coolgames@gmail.com</a> with the subject <strong>"Mindeck account deletion"</strong> and your in-game name.</li>
+          <li><strong>Step 3.</strong> We confirm the request by email and delete your data within <strong>30 days</strong>.</li>
+          <li><strong>Step 4 (optional).</strong> Uninstall the app or clear its data: Settings → Apps → Mindeck → Storage → Clear Data.</li>
+        </ul>
+        <div class="note">If the app has a "Delete profile" button in Settings → Data, you can use it instead: the deletion starts immediately.</div>
+        <p><strong>What is deleted</strong></p>
+        <ul>
+          <li>Anonymous player ID and profile: in-game name, level, XP, Mind Index, daily streak</li>
+          <li>All game results, daily and per-game statistics</li>
+          <li>Your game ratings</li>
+          <li>League membership and weekly XP</li>
+          <li>Push notification token, time zone and reminder settings</li>
+          <li>Recovery code fingerprint (the code stops working)</li>
+        </ul>
+        <p><strong>What is kept and for how long</strong></p>
+        <ul>
+          <li><strong>Aggregated, anonymous statistics</strong> (for example, total number of games played per game, average game rating) are kept, because they no longer identify you.</li>
+          <li><strong>Server backups and logs</strong> may contain your data for up to <strong>30 days</strong> after deletion, then they are overwritten.</li>
+          <li><strong>Google Play Games</strong> data (achievements, leaderboard scores, saved game) is stored by Google in your Google account. You can delete it in the Google Play Games app: Profile → Settings → Delete Play Games account and data, or remove Mindeck data from your Google account at <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">myaccount.google.com</a>.</li>
+        </ul>
       </div>
     </div>
 
@@ -278,7 +304,7 @@
           <li>Регистрация не нужна: приложение не спрашивает имя, почту или телефон.</li>
           <li>Мы храним только игровые данные, нужные для прогресса, серии дней, лиг и рейтингов.</li>
           <li>Нет рекламы, данные не продаются.</li>
-          <li>Удалить все данные можно по запросу в любой момент (см. раздел 11).</li>
+          <li>Удалить аккаунт и все данные можно в любой момент — <a href="#delete-ru">см. раздел 11</a>.</li>
         </ul>
       </div>
     </div>
@@ -368,10 +394,33 @@
       </div>
     </div>
 
-    <div class="section">
-      <h2 class="section-title"><span class="section-num">11</span> Ваши права и удаление данных</h2>
+    <div class="section" id="delete-ru">
+      <h2 class="section-title"><span class="section-num">11</span> Ваши права и удаление аккаунта</h2>
       <div class="card">
-        <p>Вы можете в любой момент сменить игровое имя в Настройках, отключить напоминания и выйти из Google Play Игр. Чтобы удалить <strong>все</strong> данные профиля, напишите на <a href="mailto:review4coolgames@gmail.com">review4coolgames@gmail.com</a> и укажите своё игровое имя (оно есть в Настройках). Мы удалим данные в течение 30 дней.</p>
+        <p>Вы можете в любой момент сменить игровое имя в Настройках, отключить напоминания и выйти из Google Play Игр. Mindeck от Tivan Game Studio создаёт профиль автоматически, без регистрации. Чтобы удалить аккаунт и все связанные данные, выполните шаги ниже.</p>
+        <p><strong>Как удалить аккаунт</strong></p>
+        <ul>
+          <li><strong>Шаг 1.</strong> Откройте Mindeck → <strong>Настройки</strong> и посмотрите своё игровое имя (например, «Хитрая Сова 4821»).</li>
+          <li><strong>Шаг 2.</strong> Напишите на <a href="mailto:review4coolgames@gmail.com?subject=Mindeck%20account%20deletion">review4coolgames@gmail.com</a> с темой <strong>«Удаление аккаунта Mindeck»</strong> и укажите игровое имя.</li>
+          <li><strong>Шаг 3.</strong> Мы подтвердим запрос по почте и удалим данные в течение <strong>30 дней</strong>.</li>
+          <li><strong>Шаг 4 (по желанию).</strong> Удалите приложение или очистите его данные: Настройки → Приложения → Mindeck → Хранилище → Очистить данные.</li>
+        </ul>
+        <div class="note">Если в приложении есть кнопка «Удалить профиль» (Настройки → Данные), можно воспользоваться ей: удаление начнётся сразу.</div>
+        <p><strong>Что удаляется</strong></p>
+        <ul>
+          <li>Анонимный идентификатор и профиль: игровое имя, уровень, опыт, индекс ума, серия дней</li>
+          <li>Все результаты партий, статистика по дням и по играм</li>
+          <li>Ваши оценки игр</li>
+          <li>Участие в лиге и недельный опыт</li>
+          <li>Токен уведомлений, часовой пояс и настройки напоминаний</li>
+          <li>Отпечаток кода восстановления (код перестаёт работать)</li>
+        </ul>
+        <p><strong>Что сохраняется и как долго</strong></p>
+        <ul>
+          <li><strong>Обобщённая анонимная статистика</strong> (например, общее число партий в игре, средняя оценка игры) сохраняется, так как больше не указывает на вас.</li>
+          <li><strong>Резервные копии и журналы сервера</strong> могут содержать ваши данные до <strong>30 дней</strong> после удаления, затем перезаписываются.</li>
+          <li><strong>Данные Google Play Игр</strong> (достижения, результаты в таблицах лидеров, сохранение) хранит Google в вашем аккаунте. Удалить их можно в приложении Google Play Игры: Профиль → Настройки → Удалить аккаунт и данные Play Игр, или в аккаунте Google на <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">myaccount.google.com</a>.</li>
+        </ul>
       </div>
     </div>
 
